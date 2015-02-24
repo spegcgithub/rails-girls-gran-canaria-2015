@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+
+  <title>Rails Girls Gran Canaria 2015</title>
+
+  <!-- Required stylesheet -->
+  <link rel="stylesheet" media="screen" href="core/deck.core.css">
+
+  <!-- Extension CSS files go here. Remove or add as needed. -->
+  <link rel="stylesheet" media="screen" href="extensions/goto/deck.goto.css">
+  <link rel="stylesheet" media="screen" href="extensions/menu/deck.menu.css">
+  <link rel="stylesheet" media="screen" href="extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" media="screen" href="extensions/status/deck.status.css">
+  <link rel="stylesheet" media="screen" href="extensions/scale/deck.scale.css">
+  <link rel="stylesheet" href="extensions/codemirror/codemirror.css">
+  <link rel="stylesheet" href="extensions/codemirror/deck.codemirror.css">
+  <link rel="stylesheet" href="extensions/codemirror/themes/default.css">
+
+  <!-- Style theme. More available in /themes/style/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="themes/style/swiss.css">
+
+  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="themes/transition/horizontal-slide.css">
+
+  <!-- Basic black and white print styles -->
+  <link rel="stylesheet" media="print" href="core/print.css">
+
+  <!-- Required Modernizr file -->
+  <script src="modernizr.custom.js"></script>
+</head>
+<body>
+  <div class="deck-container">
+
+    <!-- Begin slides. Just make elements with a class of slide. -->
+
+    <section class="slide">
+      <h1>Crear una idea con Scaffold</h1>
+    </section>
+    
+    <section class="slide">
+      <h2>El concepto IDEA</h2>
+      <p>Vamos a añadia usar la funcionalidad de scaffold para generar un punto de partida que nos permita listar, agregar, eliminar, editar, y ver cosas; en nuestro caso ideas.</p>
+      <ul>
+        <li>
+          ¿Qué representa este objeto/modelo?
+        </li>
+        <li>
+          ¿Qué atributos o propiedades tiene?
+        </li>
+        <li>
+          ¿Qué operaciones podremos hacer sobre él?
+        </li>
+      </ul>
+    </section>
+    <section class="slide">
+      <h2>MVC (Modelo Vista Controlador)</h2>
+      <ol>
+        <li>
+          <h3>El modelo</h3>
+          <p> Es la representación de la información sobre la que operamos y aquellas operaciones referidas al acceso y actualización de dicha información. </p>
+        </li>
+        <li>
+          <h3>El controlador</h3>
+          <p>Gestiona las peticiones de los usuarios y realiza peticiones al modelo cuando se realiza alguna solicitud. Hace de intermediario entre la vista y el modelo.</p>
+        </li>
+        <li>
+          <h3>La vista</h3>
+          <p>Presenta el modelo. Puede acceder al modelo pero no cambiar su estado.</p>
+        </li>
+      </ol>
+      <p>Los modelos y controadores son los responsbles para la generación de las vistas</p>
+    <img src="images/mvc.gif">
+    </section>
+ 
+
+    <section class="slide">
+      <h2> Scaffold </h2>
+      <textarea id="code" name="code" class="code" mode="ruby" style="display: none;">
+rails generate scaffold idea name:string description:text picture:string
+      </textarea>
+      <p>Esta instrucción genera la siguiente salida</p>
+      <textarea id="code" name="code" class="code" mode="" style="display: none;">
+        invoke  active_record
+        create    db/migrate/20150224110046_create_ideas.rb
+        create    app/models/idea.rb
+        invoke    test_unit
+        create      test/models/idea_test.rb
+        create      test/fixtures/ideas.yml
+        invoke  resource_route
+        route    resources :ideas
+        invoke  scaffold_controller
+        create    app/controllers/ideas_controller.rb
+        invoke    erb
+        create      app/views/ideas
+        create      app/views/ideas/index.html.erb
+        create      app/views/ideas/edit.html.erb
+        create      app/views/ideas/show.html.erb
+        create      app/views/ideas/new.html.erb
+        create      app/views/ideas/_form.html.erb
+        invoke    test_unit
+        create      test/controllers/ideas_controller_test.rb
+        invoke    helper
+        create      app/helpers/ideas_helper.rb
+        invoke      test_unit
+        invoke    jbuilder
+        create      app/views/ideas/index.json.jbuilder
+        create      app/views/ideas/show.json.jbuilder
+        invoke  assets
+        invoke    js
+        create      app/assets/javascripts/ideas.js
+        invoke    scss
+        create      app/assets/stylesheets/ideas.scss
+        invoke  scss
+        create    app/assets/stylesheets/scaffolds.scss</textarea>
+      <p> En caso que queramos deshacer lo realizado </p>
+      <textarea id="code" name="code" class="code" mode="ruby" style="display: none;">
+rails destroy scaffold idea</textarea> 
+    </section>
+
+    <section class="slide">
+      <h2>Scaffold, andamiaje</h2>
+      <p>El scaffold nos permite generar automáticamente las operaciones básicas para trabajar sobre un objeto.</p>
+      <img style="float:right" src="images/scaffold-t.jpg">
+      <ol>
+        <li>Genera el modelo.</li>
+        <li>Genera las rutas automáticamente.</li>
+        <li>Genera las migraciones</li>
+        <li>Genera ficheros css y javascript</li>
+        <li>Genera vistas y controlador del (CRUD):</li>
+        <ol>
+          <li>Creación de una idea.</li>
+          <li>Modificación de una idea.</li>
+          <li>Eliminación de una idea.</li>
+          <li>Detalle de la idea.</li>
+          <li>Listado de ideas.</li>
+        </ol>
+      </ol>
+    </section>
+    
+    <section class="slide">
+      <h2>Migraciones</h2>
+      <ul>
+      <li>Los ficheros de migración nos permiten crear y modificar nuestra base de datos de manera organizada y estrucutrada.</li>
+      <li>Las migraciones se crean en la carpeta <code>db/migrate</code></li>
+      <li>Los ficheros de migración contienen en el nombre un [YYYYMMDDHHMMSS] que permitirá ejecutarlos de manera secuencial.
+      <li>Las migraciones son independientes del manejador de la base de datos.
+      <textarea id="code" name="code" class="code" mode="ruby" style="display: none;">
+rails db:migrate</textarea></li></ul>
+      <img src="images/migracion.png"></img>
+    </section>
+   
+    <section class="slide">
+      <h2> Arrancamos el servidor</h2>
+      <p>Vamos a ver nuestros cambios en el servidor, lo arrancamos:</p>
+      <textarea id="code" name="code" class="code" mode="ruby" style="display: none;">
+rails server</textarea>
+ 
+     <p>Abrimos nuestro navegador con la siguiente url:</p>
+        <a href="http://localhost:3000/ideas">http://localhost:3000/ideas</a>
+
+    </section>
+
+    <section class="slide">
+      <h2>Layout y parcials</h2>
+      <p>Veamos los ficheros que se nos han generado bajo la ruta <code>app/views</code>
+      <ul>
+      <li>Yield, ¿magia?</li>
+      <li>Render partials</li>
+      <li>Don't Repeat Yourself</li>
+      </ul>
+    </section>
+   <section class="slide">
+      <h1>Diseño</h1>
+    </section>
+    <section class="slide">
+      <h2>Diseño, añadir enlace Twitter Bootstrap</h2>
+      <img src="images/disenio.jpg" style="float:right;">
+      <p>La aplicación no es muy atractiva visualmente, usaremos <a href="http://getbootstrap.com/2.3.2/getting-started.html">Twitter Bootsrap</a> para darle una apariencia más sofisticada.<p>
+      <ol>
+        <li>Abrimos en nuestro editor el fichero <span style="font-style: italic"> app/views/layouts/application.html.erb </span></li>
+        <li>Añadimos la referencia a Twitter Bootstrap colocando:
+          <textarea id="code" name="code" class="code">
+<link rel="stylesheet" href="http://railsgirls.com/assets/bootstrap.css"></textarea>
+          sobre la línea 
+          <textarea class="code"> <%= stylesheet_link_tag "application" %> </textarea> 
+          quedando el fichero de la siguiente forma:
+          <textarea id="code" name="code" class="code" mode="ruby" style="display: none;">
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Railsgirls</title>
+    <link rel="stylesheet" href="http://railsgirls.com/assets/bootstrap.css">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+
+    <%= yield %>
+
+  </body>
+</html></textarea></li>
+    </ol>
+    </section>
+
+    <section class="slide">
+      <h2>Diseño, un poquito de maquetación</h2>
+      <ol>
+          <li>Añadamos un contenedor con clases que hacen referencia a Bootstrap, reemplazamos:
+          <textarea  class="code"><%= yield %></textarea>
+        por
+        <textarea class="code"><div class="container">
+    <%= yield %>
+</div></textarea>   </li>
+      <li>Y un menú, bajo la etiqueta 
+        <textarea  class="code"><body></textarea>
+        añadimos:
+        <textarea  class="code">
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="/">Aplicación Ideas</a>
+      <ul class="nav">
+        <li class="active"><a href="/ideas">Ideas</a></li>
+      </ul>
+    </div>
+  </div>
+</div></textarea>
+<li>Y un pie, por ejemplo:
+  <textarea  class="code">
+<footer>
+  <div class="container">
+    Rails Girls Gran Canaria 2015
+  </div>
+</footer></textarea>
+</li>
+    </ol>
+    </section>
+    <section class="slide">
+      <h2>Diseño, darle color a nuestra aplicación</h2>
+      <p>Los ficheros de estilos se encuentran <code> app/assets/styleshetts/</code></p>
+      <ol>
+        <li>Abrimos el fichero de estilos <code>app/assets/stylesheets/application.css</code></li>
+        <li>Y añadimos al final del fichero:
+          <textarea  class="code">
+body { padding-top: 100px; }
+footer { margin-top: 100px; }
+table, td, th { vertical-align: middle !important; border: none !important; }
+th { border-bottom: 1px solid #DDD !important; }</textarea>
+        <li>Reiniciamos el servidor </li>
+        <code> rails server </code>
+      </ol>
+    </section>
+    <!-- End slides. -->
+
+    <!-- Begin extension snippets. Add or remove as needed. -->
+
+    <!-- deck.navigation snippet -->
+    <div aria-role="navigation">
+      <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+      <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+    </div>
+
+    <!-- deck.status snippet -->
+    <p class="deck-status" aria-role="status">
+      <span class="deck-status-current"></span>
+      /
+      <span class="deck-status-total"></span>
+    </p>
+
+    <!-- deck.goto snippet -->
+    <form action="." method="get" class="goto-form">
+      <label for="goto-slide">Go to slide:</label>
+      <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+      <datalist id="goto-datalist"></datalist>
+      <input type="submit" value="Go">
+    </form>
+
+    <!-- End extension snippets. -->
+  </div>
+
+<!-- Required JS files. -->
+<script src="jquery.min.js"></script>
+<script src="core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="extensions/menu/deck.menu.js"></script>
+<script src="extensions/goto/deck.goto.js"></script>
+<script src="extensions/status/deck.status.js"></script>
+<script src="extensions/navigation/deck.navigation.js"></script>
+<script src="extensions/scale/deck.scale.js"></script>
+<script src="extensions/codemirror/codemirror.js"></script>
+<script src="extensions/codemirror/mode/ruby/ruby.js"></script>
+<script src="extensions/codemirror/mode/yaml/yaml.js"></script>
+<script src="extensions/codemirror/deck.codemirror.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+  $(function() {
+    $.deck('.slide');
+  });
+</script>
+</body>
+</html>
