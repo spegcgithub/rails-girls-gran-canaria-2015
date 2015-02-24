@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+
+  <title>Rails Girls Gran Canaria 2015</title>
+
+  <!-- Required stylesheet -->
+  <link rel="stylesheet" media="screen" href="core/deck.core.css">
+
+  <!-- Extension CSS files go here. Remove or add as needed. -->
+  <link rel="stylesheet" media="screen" href="extensions/goto/deck.goto.css">
+  <link rel="stylesheet" media="screen" href="extensions/menu/deck.menu.css">
+  <link rel="stylesheet" media="screen" href="extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" media="screen" href="extensions/status/deck.status.css">
+  <link rel="stylesheet" media="screen" href="extensions/scale/deck.scale.css">
+  <link rel="stylesheet" href="extensions/codemirror/codemirror.css">
+  <link rel="stylesheet" href="extensions/codemirror/deck.codemirror.css">
+  <link rel="stylesheet" href="extensions/codemirror/themes/default.css">
+
+  <!-- Style theme. More available in /themes/style/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="themes/style/bootstrap-grid.css">
+  <link rel="stylesheet" media="screen" href="themes/style/ex_4_5.css">
+
+  <!-- Style theme. More available in /themes/style/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="themes/style/swiss.css">
+
+  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="themes/transition/horizontal-slide.css">
+
+  <!-- Basic black and white print styles -->
+  <link rel="stylesheet" media="print" href="core/print.css">
+
+  <!-- Required Modernizr file -->
+  <script src="modernizr.custom.js"></script>
+</head>
+<body>
+  <div class="deck-container">
+
+    <!-- Begin slides. Just make elements with a class of slide. -->
+
+    <section class="slide">
+      <h2>Ejercicio 4 - Agregando subida de imágenes</h2>
+      <h3>¿Qué es una Gema?</h3>
+      <p class="relevant">Es una librería para Ruby que se instala en el sistema y nos aporta un conjunto de funcionalidades.</p>
+      <h4>Traducción:</h4>
+      <ul>
+        <li>«Es una librería»: es un paquete cerrado de código</li>
+        <li>«para Ruby»: está escrito en Ruby y puedo usarlo en mis aplicaciones de Ruby on Rails</li>
+        <li>«que se instala en el sistema»: descargo la gema de internet y queda disponible para mis aplicaciones</li>
+        <li>«nos aporta un conjunto de funcionalidades»: ¡Me resuelve un problema y me ahorro tiempo desarrollando!</li>
+      </ul>
+      <h4>Ejemplos</h4>
+      <ul>
+        <li><span class="card">Subir ficheros a mi aplicación</span></li>
+        <li>Autenticación de usuarios</li>
+        <li>Generar documentos PDF</li>
+        <li>Enviar emails</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Ejercicio 4 - Agregando subida de imágenes</h2>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-6">
+            <ol>
+              <li>Abre el fichero <strong>Gemfile</strong> con tu editor</li>
+              <li>Debajo de la línea <code>gem 'sqlite3'</code> añade <code>gem 'carrierwave'</code></li>
+              <li>Ejecuta <strong>bundle install</strong></li>
+            </ol>
+            <p style="text-align: center;">¡Reinicia el servidor de Rails!</p>
+          </div>
+          <div class="col-sm-6">
+            <img src="images/ex_4_5/ejercicio 4-1 - Gemfile.png" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h2>Ejercicio 4 - Agregando subida de imágenes</h2>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="relevant">rails generate uploader Picture</p>
+            <p>app/uploaders/picture_uploader.rb</p>
+            <img src="images/ex_4_5/ejercicio 4-2 - picture_uploader.rb.png" />
+            <p>Ubica y procesa el fichero enviado</p>
+          </div>
+          <div class="col-sm-6">
+            <p class="relevant">mount_uploader :picture, PictureUploader</p>
+            <p>app/models/idea.rb</p>
+            <img src="images/ex_4_5/ejercicio 4-3 - idea.rb.png" />
+            <p>Asocia el uploader y la gema se encarga de gestionar el fichero enviado</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h2>Ejercicio 4 - Agregando subida de imágenes</h2>
+        <p class="text-center">Cambia <span class="card"><%= f.text_field :picture %></span> por <span class="card"><%= f.file_field :picture %></span></p>
+        <p class="text-center">app/views/ideas/_form.html.erb</p>
+        <img src="images/ex_4_5/ejercicio 4-4 - _form.html.erb.png" />
+    </section>
+
+    <section class="slide">
+      <h2>Ejercicio 4 - Agregando subida de imágenes</h2>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="relevant">http://localhost:3000/ideas/new</p>
+            <img src="images/ex_4_5/ejercicio 4-5 - campo Picture de tipo file.png" />
+          </div>
+          <div class="col-sm-6">
+            <p class="card text-center">¡No muestra la imagen!</p>
+            <p>Nos muestra la ruta donde ha guardado la imagen</p>
+            <hr/>
+            <img src="images/ex_4_5/ejercicio 4-6 - campo Picture muestra ruta de imagen.png" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h2>Ejercicio 4 - Agregando subida de imágenes</h2>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="text-center">Cambia <br/><br/> <span class="card"><%= @idea.picture %></span> <br/><br/> por <br/><br/> <span class="card" style="font-size: 70%"><%= image_tag(@idea.picture_url, :width => 600) if @idea.picture.present? %></span></p>
+            <p class="text-center">app/views/ideas/show.html.erb</p>
+            <img src="images/ex_4_5/ejercicio 4-7 - show.html.erb.png" />
+          </div>
+          <div class="col-sm-6">
+            <p class="relevant text-center">Ya veo mi imagen :-D</p>
+            <img src="images/ex_4_5/ejercicio 4-8 - Campo Picture ya muestra la imagen.png" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h2>Ejercicio 5 - Ajustes finales en las rutas</h2>
+      <div class="text-center">
+        <p class="relevant">http://localhost:3000</p>
+        <img src="images/ex_4_5/ejercicio 5-1 -  Home.png" />
+        <p class="card">¡ Elimina el fichero public/index.html !</p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h2>Ejercicio 5 - Ajustes finales en las rutas</h2>
+      <div class="text-center">
+        <p class="card">root :to => redirect('/ideas')</p>
+        <img src="images/ex_4_5/ejercicio 5-2 -  routes.rb.png" />
+      </div>
+    </section>
+
+    <section class="slide">
+      <h2>Ejercicio 5 - Ajustes finales en las rutas</h2>
+      <div class="text-center">
+        <p class="relevant">http://localhost:3000</p>
+        <img src="images/ex_4_5/ejercicio 5-3 -  Home.png" />
+        <p class="card">¡ La página de inicio son nuestras ideas !</p>
+      </div>
+    </section>
+
+    <!-- End slides. -->
+
+    <!-- Begin extension snippets. Add or remove as needed. -->
+
+    <!-- deck.navigation snippet -->
+    <div aria-role="navigation">
+      <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+      <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+    </div>
+
+    <!-- deck.status snippet -->
+    <p class="deck-status" aria-role="status">
+      <span class="deck-status-current"></span>
+      /
+      <span class="deck-status-total"></span>
+    </p>
+
+    <!-- deck.goto snippet -->
+    <form action="." method="get" class="goto-form">
+      <label for="goto-slide">Go to slide:</label>
+      <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+      <datalist id="goto-datalist"></datalist>
+      <input type="submit" value="Go">
+    </form>
+
+  </div>
+
+<!-- Required JS files. -->
+<script src="jquery.min.js"></script>
+<script src="core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="extensions/menu/deck.menu.js"></script>
+<script src="extensions/goto/deck.goto.js"></script>
+<script src="extensions/status/deck.status.js"></script>
+<script src="extensions/navigation/deck.navigation.js"></script>
+<script src="extensions/scale/deck.scale.js"></script>
+<script src="extensions/codemirror/codemirror.js"></script>
+<script src="extensions/codemirror/mode/ruby/ruby.js"></script>
+<script src="extensions/codemirror/mode/yaml/yaml.js"></script>
+<script src="extensions/codemirror/deck.codemirror.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+  $(function() {
+    $.deck('.slide');
+  });
+</script>
+</body>
+</html>

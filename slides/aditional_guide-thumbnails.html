@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+
+  <title>Rails Girls Gran Canaria 2015</title>
+
+  <!-- Required stylesheet -->
+  <link rel="stylesheet" media="screen" href="core/deck.core.css">
+
+  <!-- Extension CSS files go here. Remove or add as needed. -->
+  <link rel="stylesheet" media="screen" href="extensions/goto/deck.goto.css">
+  <link rel="stylesheet" media="screen" href="extensions/menu/deck.menu.css">
+  <link rel="stylesheet" media="screen" href="extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" media="screen" href="extensions/status/deck.status.css">
+  <link rel="stylesheet" media="screen" href="extensions/scale/deck.scale.css">
+  <link rel="stylesheet" href="extensions/codemirror/codemirror.css">
+  <link rel="stylesheet" href="extensions/codemirror/deck.codemirror.css">
+  <link rel="stylesheet" href="extensions/codemirror/themes/default.css">
+
+  <!-- Style theme. More available in /themes/style/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="themes/style/bootstrap-grid.css">
+  <link rel="stylesheet" media="screen" href="themes/style/ex_4_5.css">
+
+  <!-- Style theme. More available in /themes/style/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="themes/style/swiss.css">
+
+  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="themes/transition/horizontal-slide.css">
+
+  <!-- Basic black and white print styles -->
+  <link rel="stylesheet" media="print" href="core/print.css">
+
+  <!-- Required Modernizr file -->
+  <script src="modernizr.custom.js"></script>
+</head>
+<body>
+  <div class="deck-container">
+
+    <!-- Begin slides. Just make elements with a class of slide. -->
+
+    <section class="slide">
+      <h1>Creando thumbnails con CarrierWave <br/> <a href="http://railsgirlslima.github.io/thumbnails/" style="font-size: 50%;">http://railsgirlslima.github.io/thumbnails/</a></h1>
+    </section>
+
+    <section class="slide">
+      <h2>Creando thumbnails con CarrierWave</h2>
+      <h3>Instalamos la gema «mini_magick»</h3>
+      <div class="text-center">
+        <img src="images/ex_4_5/ejercicio thumbnails-1 - Gemfile.png" />
+        <p>Gemfile</p>
+        <hr/>
+        <p class="card">bundle install</p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h2>Creando thumbnails con CarrierWave</h2>
+      <h3>Configuramos el uploader</h3>
+      <div class="text-center">
+        <p>Elimina los comentarios de estas líneas</p>
+        <img src="images/ex_4_5/ejercicio thumbnails-2 - picture_uploader.rb.png" />
+        <p>app/uploaders/picture_uploader.rb</p>
+        <hr/>
+        <p class="card">Crea una nueva idea o edita una idea y sube una nueva imagen</p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h2>Creando thumbnails con CarrierWave</h2>
+      <h3>Mostramos la imagen (y no la ruta)</h3>
+      <div class="text-center">
+        <p>Cambia <span class="card"><%= idea.picture %></span> por <span class="card"><%= image_tag idea.picture_url(:thumb) if idea.picture? %></span></p>
+        <img src="images/ex_4_5/ejercicio thumbnails-3 - index.html.erb.png" />
+        <p>app/views/ideas/index.html.erb</p>
+      </div>
+    </section>
+
+    <section class="slide">
+      <h2>Creando thumbnails con CarrierWave</h2>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="relevant">Creamos una nueva idea</p>
+            <p>Elige una imagen de tu ordenador</p>
+            <img src="images/ex_4_5/ejercicio thumbnails-4 - Crear una nueva idea.png" />
+          </div>
+          <div class="col-sm-6">
+            <p class="card text-center">Acudimos al listado de ideas</p>
+            <p>¡Vemos la thumbnail!</p>
+            <img src="images/ex_4_5/ejercicio thumbnails-5 - Listado de ideas donde se ve la idea en versión thumbnail.png" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- End slides. -->
+
+    <!-- Begin extension snippets. Add or remove as needed. -->
+
+    <!-- deck.navigation snippet -->
+    <div aria-role="navigation">
+      <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+      <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+    </div>
+
+    <!-- deck.status snippet -->
+    <p class="deck-status" aria-role="status">
+      <span class="deck-status-current"></span>
+      /
+      <span class="deck-status-total"></span>
+    </p>
+
+    <!-- deck.goto snippet -->
+    <form action="." method="get" class="goto-form">
+      <label for="goto-slide">Go to slide:</label>
+      <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+      <datalist id="goto-datalist"></datalist>
+      <input type="submit" value="Go">
+    </form>
+
+  </div>
+
+<!-- Required JS files. -->
+<script src="jquery.min.js"></script>
+<script src="core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="extensions/menu/deck.menu.js"></script>
+<script src="extensions/goto/deck.goto.js"></script>
+<script src="extensions/status/deck.status.js"></script>
+<script src="extensions/navigation/deck.navigation.js"></script>
+<script src="extensions/scale/deck.scale.js"></script>
+<script src="extensions/codemirror/codemirror.js"></script>
+<script src="extensions/codemirror/mode/ruby/ruby.js"></script>
+<script src="extensions/codemirror/mode/yaml/yaml.js"></script>
+<script src="extensions/codemirror/deck.codemirror.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+  $(function() {
+    $.deck('.slide');
+  });
+</script>
+</body>
+</html>
