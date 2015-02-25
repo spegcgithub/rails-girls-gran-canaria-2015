@@ -58,13 +58,13 @@
     </section>
     <section class="slide">
       <h2>Instalación de Heroku Toolbelt</h2>
-      <p>Necesitamos instalar en nuestra máquina virtual las herraientas de Heroku. Para: </p>
+      <p>Necesitamos instalar en nuestra máquina virtual las herramientas de Heroku. </p>
       <ol>
         <li>
           <p>Descargamos las herramientas </p >
             <code>wget -qO- https://toolbelt.heroku.com/install.sh | sh</code>
         <li>
-          <p>Añadimos el path de Heroku, abrimos el fichero <code>vim .config/fish/config.fish</code> </p>
+          <p>Añadimos el path de Heroku, abrimos el fichero <code> ~/.config/fish/config.fish</code> y añadimos la siguiente línea:</p>
           <textarea class="code"> set PATH /usr/local/heroku/bin $PATH</textarea>
         </li>
         <li>Cerramos la terminal y la volvemos a abrir. Si ejectuamos <code>heroku login</code> ya nos reconocerá el comando y además aprovechamos para iniciar sesión. Cada uno que utilice sus credenciales.</li>
@@ -82,7 +82,7 @@ git init
 git add .
 git commit -m "nuestro primer commit"</textarea>
         </li>
-        <li>Necestiamos añadir la gema de Postgres para producción y limitar el sqlite3 para el entorno de desarrollo. También es recomendable añadir la gema rails_12factor. Para ello abrimos nuestro <code>Gemfile</code> y añadimos:
+        <li>Necesitamos añadir la gema de Postgres para producción y limitar el sqlite3 para el entorno de desarrollo. También es recomendable añadir la gema rails_12factor. Para ello abrimos nuestro <code>Gemfile</code> y añadimos:
           <textarea class="code">
 group :development do
   gem 'sqlite3'
@@ -94,7 +94,7 @@ end
 </textarea> 
           </li>
           <li>Realizamos un <code> bundle install</code></li>
-          <li>Y realizamos un commit a nuestro respositorio 
+          <li>Y seguidamente un commit a nuestro repositorio 
             <textarea  class="code">
 git commit -a -m "Added rails_12factor gem and updated Gemfile.lock"
 </textarea>
@@ -104,7 +104,7 @@ git commit -a -m "Added rails_12factor gem and updated Gemfile.lock"
 
     <section class="slide">
       <h2>Heroku, crear la aplicación en el servidor y subir nuestro código</h2>
-      <p>Ahora vamos a crear la aplicación en Heroku y a subir el código que tenemos guardado en nuestro respositorio local</p>
+      <p>Ahora vamos a crear la aplicación en Heroku y a subir el código que tenemos guardado en nuestro repositorio local</p>
       <ol>
         <li>Creamos la aplicación en Heroku, desde nuestra terminal <code>heroku create railsgirlsgrancanaria</code> </li>
         <li>Subimos el código a Heroku, <code>git push heroku master</code>. Esta  instrucción nos subirá a Heroku nuestro código y además realizará el despliegue de la aplicación (deploy)</li>
