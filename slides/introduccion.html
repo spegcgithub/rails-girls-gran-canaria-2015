@@ -39,8 +39,8 @@
     <!-- Begin slides. Just make elements with a class of slide. -->
     <section class="slide">
       <div class="vcenter">
-        <h1>Configuración</h1>
-        <h2>Intro a la virtualización y a Linux</h2>
+        <h1>Introducción</h1>
+        <h2>Virtualización y Linux</h2>
         <div class="logos">
           <img class="highlight "src="images/logos/incube.svg"/>
           <img class="highlight" src="images/logos/spegc_cabildo.svg"/>
@@ -69,7 +69,14 @@
     </section>
 
     <section class="slide">
-      <h2>¿Qué es?</h2>
+      <h2>Simplificando (mucho)</h2>
+      <blockquote>
+        Ejecución de un sistema operativo dentro de otro.
+      </blockquote>
+    </section>
+
+    <section class="slide">
+      <h2>Simplificando (muchísimo)</h2>
       <img style="float: center" src="images/virtualbox_railsgirls.png"/>
     </section>
 
@@ -83,13 +90,20 @@
     <section class="slide">
       <h2>Beneficios</h2>
       <ul>
-        <li>Aprovechamiento de recursos (reducción de costes)</li>
-        <li>Mayor seguridad</li>
-        <li>Alta disponibilidad</li>
-        <li>Permite ejecutar código de otras plataformas</li>
-        <li>Facilita las pruebas</li>
-        <li>Mantiene limpio el sistema base</li>
-        <li>Entornos casi idénticos a los de producción (<strike>en mi máquina funciona (TM)</strike>)</li>
+        <li>Para nosotros:
+          <ul>
+            <li>Facilita las pruebas</li>
+            <li>Mantiene limpio el sistema base</li>
+            <li>Entornos casi idénticos a los de producción (<strike>en mi máquina funciona (TM)</strike>)</li>
+        </ul>
+        </li>
+        <li>En general:
+          <ul>
+            <li>Aprovechamiento de recursos (reducción de costes)</li>
+            <li>Mayor seguridad</li>
+            <li>Alta disponibilidad</li>
+          </ul>
+        </li>
       </ul>
     </section>
 
@@ -101,7 +115,11 @@
           asistida por hardware, ligera, etc.</li>
         <li>El hardware ofrece extensiones para facilitarla (VT-x, AMD-V, VT-c, etc.)</li>
         <li>Aún se sigue investigando</li>
-        <li>VMWare, VirtualBox, Xen, QEMU, KVM, LXC, Microsoft Hyper-V, etc.</li>
+        <li><a href="http://www.vmware.com/">VMWare</a>, <a href="http://virtualbox.org/">VirtualBox</a>,
+          <a href="http://www.xenproject.org/">Xen</a>, <a href="http://qemu.org/">QEMU</a>,
+          <a href="http://www.linux-kvm.org/">KVM</a>, <a href="http://linuxcontainers.org/">LXC</a>,
+          <a href="http://www.microsoft.com/oem/es/products/servers/Pages/hyper_v_server.aspx">Microsoft Hyper-V</a>,
+          etc.</li>
       </ul>
     </section>
 
@@ -127,8 +145,26 @@
     </section>
 
     <section class="slide">
-      <img style="float: right" src="images/tux.png"/>
-      <h2>¿Qué es?</h2>
+      <h2>Sistemas operativos y aplicaciones</h2>
+      <a title="By Operating_system_placement.svg: Golftheman derivative work: LyingB (Operating_system_placement.svg) [CC BY-SA 3.0 (http://creativecommons.org/licenses/by-sa/3.0)], via Wikimedia Commons" href="http://commons.wikimedia.org/wiki/File%3AOperating_system_placement-es.svg">
+        <img alt="Diagrama sistema operativo frente a aplicaciones" src="images/diagrama-sistema-operativo.png" class="right-sidebar"/>
+      </a>
+      <ul>
+        <li>Un sistema operativo: conjunto de programas de un sistema informático que:
+          <ul>
+            <li>Gestiona los recursos físicos (<em>hardware</em>)</li>
+            <li>Ofrecer servicios a las aplicaciones</li>
+          </ul>
+        </li>
+        <li>Ordenadores, teléfonos, enrutadores... todos tienen uno</li>
+        <li>El navegador, la suite de ofimática o el «Whatsapp» son aplicaciones
+          y no se consideran parte del sistema operativo.</li>
+      </ul>
+    </section>
+
+    <section class="slide">
+      <h2>Linux es un sistema operativo</h2>
+      <img class="right-sidebar" src="images/tux.png" width="350" />
       <ul>
         <li>Sistema operativo</li>
         <li>Nacido en 1991 de la mano de Linus Torvalds</li>
@@ -143,13 +179,13 @@
         <li>Servidores (Google o Facebook son buenos ejemplos)</li>
         <li>Sistemas de escritorio (pequeño porcentaje del mercado)</li>
         <li>Sistemas empotrados</li>
-        <li>Supercomputadores (97% en el Top 500 en noviembre de 2014)</li>
+        <li>Supercomputadores (97% en el <a href="http://www.top500.org/">Top 500</a> en noviembre de 2014)</li>
         <li>¿Alguien tiene un teléfono Android?</li>
       </ul>
     </section>
 
     <section class="slide">
-      <h2>Núcleo y aplicaciones</h2>
+      <h2>Ecosistema: núcleo y aplicaciones</h2>
       <ul>
         <li>Linus Torvalds coordina el desarrollo del núcleo
           <ul>
@@ -157,7 +193,7 @@
             <li>Linus delega en gente de confianza</li>
           </ul>
         </li>
-        <li>Existen entidades que desarrollan software adicional
+        <li>Existen entidades que desarrollan aplicaciones
           <ul>
             <li>Desarrolladores independientes, fundaciones, empresas</li>
             <li>Desde pequeños proyectos...</li>
@@ -168,7 +204,7 @@
     </section>
 
     <section class="slide">
-      <h2>Las distribuciones de Linux</h2>
+      <h2>Ecosistema: distribuciones</h2>
       <ul>
         <li>Existen otras entidades que construyen productos combinando lo anterior</li>
         <li>Simplificando, distribución = núcleo + aplicaciones + herramientas</li>
@@ -178,10 +214,7 @@
     </section>
 
     <section class="slide">
-      <h2>Referencias</h2>
-      <ul>
-        <li>http://www.top500.org/</li>
-      </ul>
+      <h1>Preguntas</h1>
     </section>
 
     <!-- End slides. -->
