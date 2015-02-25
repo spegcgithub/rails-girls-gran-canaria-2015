@@ -1,0 +1,24 @@
+.participante {}
+
+  .participante img {
+    border: 3px dashed #c00;
+    padding: 1%;
+  }
+
+  .participante .bio {
+    font-size: 70%;
+  }
+
+.callToAction {
+  background: #c00;
+  color: white;
+  font-size: 200%;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 15px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 80%;
+  left: 10%;
+}
