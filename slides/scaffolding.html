@@ -73,7 +73,7 @@
           <p>Presenta el modelo. Puede acceder al modelo pero no cambiar su estado.</p>
         </li>
       </ol>
-      <p>Los modelos y controadores son los responsbles para la generación de las vistas</p>
+      <p>Los modelos y controladores son los responsables para la generación de las vistas</p>
     <img src="images/mvc.gif">
     </section>
  
@@ -131,7 +131,7 @@ rails destroy scaffold idea</textarea>
         <li>Genera las rutas automáticamente.</li>
         <li>Genera las migraciones</li>
         <li>Genera ficheros css y javascript</li>
-        <li>Genera vistas y controlador del (CRUD):</li>
+        <li>Genera vistas y controlador para las acciones del CRUD:</li>
         <ol>
           <li>Creación de una idea.</li>
           <li>Modificación de una idea.</li>
@@ -145,7 +145,7 @@ rails destroy scaffold idea</textarea>
     <section class="slide">
       <h2>Migraciones</h2>
       <ul>
-      <li>Los ficheros de migración nos permiten crear y modificar nuestra base de datos de manera organizada y estrucutrada.</li>
+      <li>Los ficheros de migración nos permiten crear y modificar nuestra base de datos de manera organizada y estructurada.</li>
       <li>Las migraciones se crean en la carpeta <code>db/migrate</code></li>
       <li>Los ficheros de migración contienen en el nombre un [YYYYMMDDHHMMSS] que permitirá ejecutarlos de manera secuencial.
       <li>Las migraciones son independientes del manejador de la base de datos.
@@ -166,11 +166,14 @@ rails server</textarea>
     </section>
 
     <section class="slide">
-      <h2>Layout y parcials</h2>
+      <h2>Layout y partials</h2>
       <p>Veamos los ficheros que se nos han generado bajo la ruta <code>app/views</code>
       <ul>
-      <li>Yield, ¿magia?</li>
-      <li>Render partials</li>
+        <li>¿renderizar? (No la busquen en el REA, es como printear ;). Lee y evalúa el código en ruby que tenemos en nuestra plantilla y genera un html dinámico.
+        <li>Yield, ¿magia?<br>
+          El comando <code>yield</code> ejecuta un código (bloque) que le pasamos en un contexto. Por ejemplo, nosotros tenemos el controlador <code>IdeasController</code> con una acción <code>index</code> que representa nuestro listado de ideas. Cuando cargamos la url <code>localhost:3000/ideas</code> se renderiza la vista <code>application.html.erb</code> que se encuentra en <code>views/layouts/</code>. Al llegar a la instrucción <code>yield</code>, éste inserta el código que se encuentra la vista index de nuestro controlador de ideas, es decir, el fichero <code>index.html.erb</code> que se encuentra en <code>views/ideas/</code>. Tras insertar el código contenido en el fichero se sigue ejecutando el fichero layout.
+        </li>
+        <li>Render partials. Renderiza vistas parciales (cachos) y nos devuelve el html. Ejemplo <code>app/views/ideas/edit.html.erb</code> </li>
       <li>Don't Repeat Yourself</li>
       </ul>
     </section>
@@ -180,7 +183,7 @@ rails server</textarea>
     <section class="slide">
       <h2>Diseño, añadir enlace Twitter Bootstrap</h2>
       <img src="images/disenio.jpg" style="float:right;">
-      <p>La aplicación no es muy atractiva visualmente, usaremos <a href="http://getbootstrap.com/2.3.2/getting-started.html">Twitter Bootsrap</a> para darle una apariencia más sofisticada.<p>
+      <p>La aplicación no es muy atractiva visualmente, usaremos <a href="http://getbootstrap.com/2.3.2/getting-started.html">Twitter Bootstrap</a> para darle una apariencia más sofisticada.<p>
       <ol>
         <li>Abrimos en nuestro editor el fichero <span style="font-style: italic"> app/views/layouts/application.html.erb </span></li>
         <li>Añadimos la referencia a Twitter Bootstrap colocando:
@@ -243,7 +246,7 @@ rails server</textarea>
     </section>
     <section class="slide">
       <h2>Diseño, darle color a nuestra aplicación</h2>
-      <p>Los ficheros de estilos se encuentran <code> app/assets/styleshetts/</code></p>
+      <p>Los ficheros de estilos se encuentran <code> app/assets/stylesheets/</code></p>
       <ol>
         <li>Abrimos el fichero de estilos <code>app/assets/stylesheets/application.css</code></li>
         <li>Y añadimos al final del fichero:
