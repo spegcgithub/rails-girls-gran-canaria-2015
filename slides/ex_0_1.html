@@ -47,7 +47,6 @@
     <section class="slide">
       <h2>Bentobox</h2>
       <img src="images/ex_0_1/bentobox.png"/>
-      <!-- Ejemplo venta de entradas. Imagen que lo represente. <img style="float: right" src="images/first_web_server.jpg"/>-->
     </section>
 
     <section class="slide">
@@ -59,14 +58,17 @@
         <li><h3>4. HTML</h3></li>
         <li><h3>5. MongoDB</h3></li>
       </ul>
-      <ul style="float: left; margin-left: 33%; list-style: none;">
+      <ul style="float: left; margin-left: 15%; list-style: none;">
         <li><h3>6. Apache</h3></li>
         <li><h3>7. CSS</h3></li>
         <li><h3>8. Django</h3></li>
         <li><h3>9. MySQL</h3></li>
         <li><h3>10. Nginx</h3></li>
       </ul>
-      <p style="float: right; margin-left: 66%;">¡¡ 5 minutos !!</p>
+      <div>
+        <img src="images/ex_0_1/bentobox_food.png"/>
+        <p style="float: right;">¡¡ 5 minutos !!</p>
+      </div>
     </section>
 
     <section class="slide">
@@ -117,13 +119,13 @@
       <h2>¿Qué necesitamos para empezar?</h2>
       <img style="float: right" src="images/ex_0_1/laptop.png"/>
       <h3>Ordenador</h3>
-      <p>Con el entorno ya instalado. En este caso, la máquina virtual.</p>
+      <p>Con el entorno ya instalado, en este caso, la máquina virtual.</p>
       <img style="float: right" src="images/ex_0_1/sublimetext.jpg"/>
       <h3>Editor de Texto</h3>
-      <p>Sublime Text, Vim, Emacs y Gedit son ejemplos de editores de texto que se pueden usar para escribir código y editar archivos.</p>
+      <p>Sublime Text, Vim, Emacs y Gedit son ejemplos de editores de texto que se pueden usar para escribir código y editar ficheros.</p>
       <img style="float: right" src="images/ex_0_1/terminal.png"/>
       <h3>Terminal</h3>
-      <p>Es el lugar donde se inicia el servidor de Rails y se ejecutan los comandos.</p>
+      <p>Donde se inicia el servidor de Rails y se ejecutan los comandos.</p>
       <img style="float: right" src="images/ex_0_1/browser.jpg"/>
       <h3>Navegador web</h3>
       <p>(Firefox, Safari, Chrome) para vizualizar la aplicación.</p>
@@ -131,88 +133,139 @@
 
     <section class="slide">
       <h2>Aplicación «Ideas»</h2>
-      <p>Empezaremos por algo fácil e iremos aumentando la complejidad.</p>
-      <p>Aplicación donde podamos anotar nuestras ideas y asociarles imágenes.</p>
-      <p>Idea: nombre, descripción e imagen.</p>
-      <h3>Mockup</h3>
-      <img src="images/ex_0_1/mockup.png"/>
+      <ul>
+        <li>Empezaremos por algo fácil e iremos aumentando la complejidad.</li>
+        <li>Aplicación donde podamos anotar nuestras ideas y asociarles imágenes.</li>
+        <li>Una «idea» se compone de los campos «nombre», «descripción» e «imagen»:
+          <ul>
+            <li>name: string</li><li>description:text</li><li>picture: string</li>
+          </ul>
+        </li>
+        <li>Mockups: balsamiq.com, gomockingbird.com
+          <img src="images/ex_0_1/mockup.png"/>
+        </li>
+      </ul>
     </section>
 
     <section class="slide">
-      <h2>Creamos nuestro primer proyecto Rails</h2>
+      <h2>Crear una aplicación Rails</h2>
+      <p>Lo primero que tenemos que hacer es crear una nueva aplicación</p>
       <ol>
         <li>
-          <p>Abrimos el terminal y ejecutamos lo siguiente:</p>
+          <p>Abrimos el terminal y creamos un directorio para colocar nuestras aplicaciones:</p>
           <textarea id="code" name="code" class="code" mode="ruby" style="display: none;">
             mkdir projects 
             cd projects
           </textarea>
         </li>
         <li>
-          <p>Creamos el proyecto «railsgirls»</p>
+          <p>Creamos la aplicación con el nombre «railsgirls»</p>
           <textarea id="code" name="code" class="code" mode="ruby" style="display: none;">
             rails new railsgirls
-          </textarea>
-          <br/>
-          <p>Esto es lo que ocurre:</p>
-          <textarea id="code" name="code" class="code" mode="ruby" style="display: none; font-size: 10pt;">
-            create  README.rdoc
-            create  Rakefile
-            create  config.ru
-            create  .gitignore
-            create  Gemfile
-            create  app
-            create  app/assets/javascripts/application.js
-            create  app/assets/stylesheets/application.css
-            create  app/controllers/application_controller.rb
-            create  app/helpers/application_helper.rb
-            create  app/views/layouts/application.html.erb
-                  ...
-            create  config
-            create  config/routes.rb
-            create  config/application.rb
-            create  config/environment.rb
-                  ...
-            create  config/initializers
-                  ...
-            create  config/locales
-                  ...
-            create  config/database.yml
-            create  db
-            create  db/seeds.rb
-            create  lib
-                  ...
-            create  log
-                  ...
-            create  public
-                  ...
-            create  test/fixtures
-                  ...
-            create  vendor/assets/javascripts
-                  ...
           </textarea>
         </li>
       </ol>
     </section>
 
     <section class="slide">
+      <h2>Estructura de directorios de Rails</h2>
+      <p>Esto es lo que ocurre:</p>
+      <pre style="font-size: 10pt; color: #090">
+        create  README.rdoc
+        create  Rakefile
+        create  config.ru
+        create  .gitignore
+        create  Gemfile
+        create  app
+        create  app/assets/javascripts/application.js
+        create  app/assets/stylesheets/application.css
+        create  app/controllers/application_controller.rb
+        create  app/helpers/application_helper.rb
+        create  app/views/layouts/application.html.erb
+              ...
+        create  config
+        create  config/routes.rb
+        create  config/application.rb
+        create  config/environment.rb
+              ...
+        create  config/initializers
+              ...
+        create  config/locales
+              ...
+        create  config/database.yml
+        create  db
+        create  db/seeds.rb
+        create  lib
+              ...
+        create  log
+              ...
+        create  public
+              ...
+        create  test/fixtures
+              ...
+        create  vendor/assets/javascripts
+              ...
+      </pre>
+    </section>
+
+    <section class="slide">
       <h2>Arrancamos el servidor en local</h2>
       <ol>
         <li>
-          <p>Ejecutamos el servidor en local (nuestro ordenador):</p>
+          <p>Entramos al directorio:</p>
           <textarea id="code" name="code" class="code" mode="ruby" style="display: none;">
             cd railsgirls
-            rails server
           </textarea>
         </li>
         <li>
-          <p>Abrimos http://localhost:3000 en el navegador. Si vemos la página "Welcome aboard", todo ha ido bien.</p>
+          <p>Ejecutamos el servidor en local (nuestro ordenador):</p>
+          <textarea id="code" name="code" class="code" mode="ruby" style="display: none;">
+            rails server # rails s
+          </textarea>
+          <pre style="font-size: 10pt; color: #090">
+            $ cd railsgirls
+            $ bin/rails server
+            => Booting WEBrick
+            => Rails 4.2.0 application starting in development on http://localhost:3000
+            => Call with -d to detach
+            => Ctrl-C to shutdown server
+            [2013-08-07 02:00:01] INFO  WEBrick 1.3.1
+            [2013-08-07 02:00:01] INFO  ruby 2.0.0 (2013-06-27) [x86_64-darwin11.2.0]
+            [2013-08-07 02:00:01] INFO  WEBrick::HTTPServer#start: pid=69680 port=3000
+          </pre>
+        </li>
+      </ol>
+      <p>Este simple comando lanza un pequelo servidor llamado WEBrick</p>
+      <p>Nuestro ordenador hace las veces tanto de cliente como de servidor</p>
+    </section>
+
+    <section class="slide">
+      <h2>Arrancamos el servidor en local</h2>
+      <ol>
+        <li>Vamos al navegador</li>
+        <li>
+          <p>Abrimos http://localhost:3000</p>
+          <p>Si vemos la página "Welcome aboard", todo ha ido bien.</p>
           <img src="images/ex_0_1/welcome.png"/>
         </li>
         <li>
           <p>Pulsamos CTRL-C en la terminal para salir del servidor.</p>
         </li>
       </ol>
+    </section>
+
+    <section class="slide">
+      <h2>Comandos de Rails</h2>
+      <ul>
+        <li>rails new app_name</li>
+        <li>rails server</li>
+        <li>rails console</li>
+        <li>rails generate</li>
+        <li>rails dbconsole</li>
+        <li>rails destroy</li>
+        <li>rails runner</li>
+        <li>rake</li>
+      </ul>
     </section>
 
     <section class="slide">
