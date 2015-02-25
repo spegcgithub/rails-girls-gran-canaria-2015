@@ -1,0 +1,9 @@
+.logos img {
+  display: inline-block;
+  margin-left: 1em;
+  height: 50px;
+}
+
+.logos img.highlight {
+  height: 125px;
+}
