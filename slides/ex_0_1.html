@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+
+  <title>Rails Girls Gran Canaria 2015</title>
+
+  <!-- Required stylesheet -->
+  <link rel="stylesheet" media="screen" href="core/deck.core.css">
+
+  <!-- Extension CSS files go here. Remove or add as needed. -->
+  <link rel="stylesheet" media="screen" href="extensions/goto/deck.goto.css">
+  <link rel="stylesheet" media="screen" href="extensions/menu/deck.menu.css">
+  <link rel="stylesheet" media="screen" href="extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" media="screen" href="extensions/status/deck.status.css">
+  <link rel="stylesheet" media="screen" href="extensions/scale/deck.scale.css">
+  <link rel="stylesheet" href="extensions/codemirror/codemirror.css">
+  <link rel="stylesheet" href="extensions/codemirror/deck.codemirror.css">
+  <link rel="stylesheet" href="extensions/codemirror/themes/default.css">
+
+  <!-- Style theme. More available in /themes/style/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="themes/style/swiss.css">
+
+  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="themes/transition/horizontal-slide.css">
+
+  <!-- Basic black and white print styles -->
+  <link rel="stylesheet" media="print" href="core/print.css">
+
+  <!-- Required Modernizr file -->
+  <script src="modernizr.custom.js"></script>
+</head>
+<body>
+  <div class="deck-container">
+
+    <!-- Begin slides. Just make elements with a class of slide. -->
+
+    <section class="slide">
+      <h1>
+        ¿Demasiados conceptos?
+        <img src="images/ex_0_1/words.png"/>
+      </h1>
+    </section>
+
+    <section class="slide">
+      <h2>Bentobox</h2>
+      <img src="images/ex_0_1/bentobox.png"/>
+      <!-- Ejemplo venta de entradas. Imagen que lo represente. <img style="float: right" src="images/first_web_server.jpg"/>-->
+    </section>
+
+    <section class="slide">
+      <h2>Bentobox - Ejercicio</h2>
+      <ul style="float: left; list-style: none">
+        <li><h3>1. PHP</h3></li>
+        <li><h3>2. SaaS</h3></li>
+        <li><h3>3. RoR</h3></li>
+        <li><h3>4. HTML</h3></li>
+        <li><h3>5. MongoDB</h3></li>
+      </ul>
+      <ul style="float: left; margin-left: 33%; list-style: none;">
+        <li><h3>6. Apache</h3></li>
+        <li><h3>7. CSS</h3></li>
+        <li><h3>8. Django</h3></li>
+        <li><h3>9. MySQL</h3></li>
+        <li><h3>10. Nginx</h3></li>
+      </ul>
+      <p style="float: right; margin-left: 66%;">¡¡ 5 minutos !!</p>
+    </section>
+
+    <section class="slide">
+      <h2>Bentobox - Solución</h2>
+      <img style="float: right" src="images/ex_0_1/bentobox_solution.png"/>
+      <ol>
+        <li><h3>PHP</h3> Lógica. Lenguaje de programación.</li>
+        <li><h3>SaaS</h3> Modelo de negocio. Software as a Service.</li>
+        <li><h3>RoR</h3> Lógica. Ruby on Rails. Framework.</li>
+        <li><h3>HTML</h3> Estilo y estructura. Lenguaje de marcado.</li>
+        <li><h3>MongoDB</h3> Base de datos. NoSQL.</li>
+        <li><h3>Apache</h3> Infraestructura. Software de servidor de código abierto.</li>
+        <li><h3>CSS</h3> Estilo y estructura. Define la apariencia de la web.</li>
+        <li><h3>Django</h3> Lógica. Framework. Equivalente a Rails para Python.</li>
+        <li><h3>MySQL</h3> Base de datos. Sistema de base de datos de código abierto.</li>
+        <li><h3>Nginx</h3> Infraestructura. Software de servidor de código abierto.</li>
+      </ol>
+    </section>
+
+    <section class="slide">
+      <h2>Front-End y Back-End</h2>
+      <ul>
+        <li><h3>Front-End</h3>
+          <p>Parte de la web que podemos ver y con la que se puede interactuar.</p>
+          <p>Diseño, HTML, CSS, JavaScript, fuentes, botones, formularios...</p>
+        </li>
+        <li><h3>Lógica - Backend-End</h3>
+          <p>Parte encargada de procesar la información y almacenarla.</p>
+          <p>Ruby, RoR, Python, Django, PHP, ...</p>
+        </li>
+        <li><h3>Base de datos - Backend-End</h3>
+          <p>"Almacén" de información</p>
+          <p>PostgreSQl, MySQL, SQLite, ...</p>
+        </li>
+        <li><h3>Infraestructura - Backend-End</h3>
+          <p>Servidor web.</p>
+          <p>Apache, Nginx, IIS, ...</p>
+        </li>
+      </ul>
+      <!-- Ejemplo venta de entradas. Imagen que lo represente. <img style="float: right" src="images/first_web_server.jpg"/>-->
+    </section>
+
+    <section class="slide">
+      <h1>¡Manos a la obra!</h1>
+    </section>
+      
+    <section class="slide">
+      <h2>¿Qué necesitamos para empezar?</h2>
+      <img style="float: right" src="images/ex_0_1/laptop.png"/>
+      <h3>Ordenador</h3>
+      <p>Con el entorno ya instalado. En este caso, la máquina virtual.</p>
+      <img style="float: right" src="images/ex_0_1/sublimetext.jpg"/>
+      <h3>Editor de Texto</h3>
+      <p>Sublime Text, Vim, Emacs y Gedit son ejemplos de editores de texto que se pueden usar para escribir código y editar archivos.</p>
+      <img style="float: right" src="images/ex_0_1/terminal.png"/>
+      <h3>Terminal</h3>
+      <p>Es el lugar donde se inicia el servidor de Rails y se ejecutan los comandos.</p>
+      <img style="float: right" src="images/ex_0_1/browser.jpg"/>
+      <h3>Navegador web</h3>
+      <p>(Firefox, Safari, Chrome) para vizualizar la aplicación.</p>
+    </section>
+
+    <section class="slide">
+      <h2>Aplicación «Ideas»</h2>
+      <p>Empezaremos por algo fácil e iremos aumentando la complejidad.</p>
+      <p>Aplicación donde podamos anotar nuestras ideas y asociarles imágenes.</p>
+      <p>Idea: nombre, descripción e imagen.</p>
+      <h3>Mockup</h3>
+      <img src="images/ex_0_1/mockup.png"/>
+    </section>
+
+    <section class="slide">
+      <h2>Creamos nuestro primer proyecto Rails</h2>
+      <ol>
+        <li>
+          <p>Abrimos el terminal y ejecutamos lo siguiente:</p>
+          <textarea id="code" name="code" class="code" mode="ruby" style="display: none;">
+            mkdir projects 
+            cd projects
+          </textarea>
+        </li>
+        <li>
+          <p>Creamos el proyecto «railsgirls»</p>
+          <textarea id="code" name="code" class="code" mode="ruby" style="display: none;">
+            rails new railsgirls
+          </textarea>
+          <br/>
+          <p>Esto es lo que ocurre:</p>
+          <textarea id="code" name="code" class="code" mode="ruby" style="display: none; font-size: 10pt;">
+            create  README.rdoc
+            create  Rakefile
+            create  config.ru
+            create  .gitignore
+            create  Gemfile
+            create  app
+            create  app/assets/javascripts/application.js
+            create  app/assets/stylesheets/application.css
+            create  app/controllers/application_controller.rb
+            create  app/helpers/application_helper.rb
+            create  app/views/layouts/application.html.erb
+                  ...
+            create  config
+            create  config/routes.rb
+            create  config/application.rb
+            create  config/environment.rb
+                  ...
+            create  config/initializers
+                  ...
+            create  config/locales
+                  ...
+            create  config/database.yml
+            create  db
+            create  db/seeds.rb
+            create  lib
+                  ...
+            create  log
+                  ...
+            create  public
+                  ...
+            create  test/fixtures
+                  ...
+            create  vendor/assets/javascripts
+                  ...
+          </textarea>
+        </li>
+      </ol>
+    </section>
+
+    <section class="slide">
+      <h2>Arrancamos el servidor en local</h2>
+      <ol>
+        <li>
+          <p>Ejecutamos el servidor en local (nuestro ordenador):</p>
+          <textarea id="code" name="code" class="code" mode="ruby" style="display: none;">
+            cd railsgirls
+            rails server
+          </textarea>
+        </li>
+        <li>
+          <p>Abrimos http://localhost:3000 en el navegador. Si vemos la página "Welcome aboard", todo ha ido bien.</p>
+          <img src="images/ex_0_1/welcome.png"/>
+        </li>
+        <li>
+          <p>Pulsamos CTRL-C en la terminal para salir del servidor.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="slide">
+      <h1>Pasamos a la magia...</h1>
+    </section>
+
+    <!--section class="slide">
+      <h2>Fuentes</h2>
+      http://www.technobuffalo.com/wp-content/uploads/2013/11/sputnik-3.jpg
+      http://simonwebdesign.com/wp-content/uploads/edd/firefox-browser-mockup-hero.jpg
+      http://www.balinov.com/static/assets/blog/2/1.jpg
+      http://i.stack.imgur.com/2DFKk.png
+    </section-->
+
+
+    <!-- End slides. -->
+
+    <!-- Begin extension snippets. Add or remove as needed. -->
+
+    <!-- deck.navigation snippet -->
+    <div aria-role="navigation">
+      <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+      <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+    </div>
+
+    <!-- deck.status snippet -->
+    <p class="deck-status" aria-role="status">
+      <span class="deck-status-current"></span>
+      /
+      <span class="deck-status-total"></span>
+    </p>
+
+    <!-- deck.goto snippet -->
+    <form action="." method="get" class="goto-form">
+      <label for="goto-slide">Go to slide:</label>
+      <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+      <datalist id="goto-datalist"></datalist>
+      <input type="submit" value="Go">
+    </form>
+
+    <!-- End extension snippets. -->
+  </div>
+
+<!-- Required JS files. -->
+<script src="jquery.min.js"></script>
+<script src="core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="extensions/menu/deck.menu.js"></script>
+<script src="extensions/goto/deck.goto.js"></script>
+<script src="extensions/status/deck.status.js"></script>
+<script src="extensions/navigation/deck.navigation.js"></script>
+<script src="extensions/scale/deck.scale.js"></script>
+<script src="extensions/codemirror/codemirror.js"></script>
+<script src="extensions/codemirror/mode/ruby/ruby.js"></script>
+<script src="extensions/codemirror/mode/yaml/yaml.js"></script>
+<script src="extensions/codemirror/deck.codemirror.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+  $(function() {
+    $.deck('.slide');
+  });
+</script>
+</body>
+</html>
+
