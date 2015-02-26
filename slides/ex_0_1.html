@@ -31,6 +31,14 @@
 
   <!-- Required Modernizr file -->
   <script src="modernizr.custom.js"></script>
+
+  <style>
+    td {
+      border: 1px solid #d5d2ca;
+      padding: 15px;
+      font-size: 0.6em;
+    }
+  </style>
 </head>
 <body>
   <div class="deck-container">
@@ -51,20 +59,20 @@
 
     <section class="slide">
       <h2>Bentobox - Ejercicio</h2>
-      <ul style="float: left; list-style: none">
-        <li><h3>1. PHP</h3></li>
-        <li><h3>2. SaaS</h3></li>
-        <li><h3>3. RoR</h3></li>
-        <li><h3>4. HTML</h3></li>
-        <li><h3>5. MongoDB</h3></li>
-      </ul>
-      <ul style="float: left; margin-left: 15%; list-style: none;">
-        <li><h3>6. Apache</h3></li>
-        <li><h3>7. CSS</h3></li>
-        <li><h3>8. Django</h3></li>
-        <li><h3>9. MySQL</h3></li>
-        <li><h3>10. Nginx</h3></li>
-      </ul>
+      <ol style="float: left;">
+        <li><h3>PHP</h3></li>
+        <li><h3>SaaS</h3></li>
+        <li><h3>RoR</h3></li>
+        <li><h3>HTML</h3></li>
+        <li><h3>MongoDB</h3></li>
+      </ol>
+      <ol style="float: left; margin-left: 15%;" start="6">
+        <li><h3>Apache</h3></li>
+        <li><h3>CSS</h3></li>
+        <li><h3>Django</h3></li>
+        <li><h3>MySQL</h3></li>
+        <li><h3>Nginx</h3></li>
+      </ol>
       <div>
         <img src="images/ex_0_1/bentobox_food.png"/>
         <p style="float: right;">¡¡ 5 minutos !!</p>
@@ -73,13 +81,19 @@
 
     <section class="slide">
       <h2>Bentobox - Solución</h2>
-      <img style="float: right" src="images/ex_0_1/bentobox_solution.png"/>
-      <ol>
+      <img src="images/ex_0_1/bentobox_solution.png"/>
+    </section>
+
+    <section class="slide">
+      <h2>Bentobox - Solución</h2>
+      <ol style="float: left; width: 45%; ">
         <li><h3>PHP</h3> Lógica. Lenguaje de programación.</li>
         <li><h3>SaaS</h3> Modelo de negocio. Software as a Service.</li>
         <li><h3>RoR</h3> Lógica. Ruby on Rails. Framework.</li>
         <li><h3>HTML</h3> Estilo y estructura. Lenguaje de marcado.</li>
-        <li><h3>MongoDB</h3> Base de datos. NoSQL.</li>
+        <li><h3>MongoDB</h3> Base de datos. NoSQL. Orientado a documentos, JSON (BSON)</li>
+      </ol>
+      <ol style="margin-left: 53%;" start="6">
         <li><h3>Apache</h3> Infraestructura. Software de servidor de código abierto.</li>
         <li><h3>CSS</h3> Estilo y estructura. Define la apariencia de la web.</li>
         <li><h3>Django</h3> Lógica. Framework. Equivalente a Rails para Python.</li>
@@ -123,7 +137,7 @@
       <img style="float: right" src="images/ex_0_1/sublimetext.jpg"/>
       <h3>Editor de Texto</h3>
       <p>Sublime Text, Vim, Emacs y Gedit son ejemplos de editores de texto que se pueden usar para escribir código y editar ficheros.</p>
-      <img style="float: right" src="images/ex_0_1/terminal.png"/>
+      <img style="float: right" src="images/ex_0_1/terminal_suse.png"/>
       <h3>Terminal</h3>
       <p>Donde se inicia el servidor de Rails y se ejecutan los comandos.</p>
       <img style="float: right" src="images/ex_0_1/browser.jpg"/>
@@ -209,6 +223,76 @@
     </section>
 
     <section class="slide">
+      <h2>Estructura de directorios de Rails</h2>
+      <table>
+      <thead>
+      <tr>
+        <th>Fichero/Directorio</th>
+        <th>Propósito</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><code>app/</code></td>
+        <td>Contiene los controllers, models, views, helpers, mailers y assets de la aplicación.</td>
+      </tr>
+      <tr>
+        <td><code>bin/</code></td>
+        <td>Contiene el script que inicia la aplicación y puede contener otros para configurar, desplegar o arrancar la aplicación.</td>
+      </tr>
+      <tr>
+        <td><code>config/</code></td>
+        <td>Configura las reglas de ejecución de la aplicación, rutas, base de datos, locales, etc..</td>
+      </tr>
+      <tr>
+        <td><code>config.ru</code></td>
+        <td>Configuración para servidores basados en Rack usados para iniciar la aplicación.</td>
+      </tr>
+      <tr>
+        <td><code>db/</code></td>
+        <td>Contiene el esquema actual de la base de datos, así como las migraciones de la base de datos.</td>
+      </tr>
+      <tr>
+        <td><code>Gemfile</code> <code>Gemfile.lock</code></td>
+        <td>En estos ficheros se especifica qué dependencias de gemas son necesarias para la aplicación Rails. La gema Bundler hace uso de estos ficheros para instarlar las gemas en las versiones exactas que la aplicación necesita.</td>
+      </tr>
+      <tr>
+        <td><code>lib/</code></td>
+        <td>Módulos extendidos para la aplicación.</td>
+      </tr>
+      <tr>
+        <td><code>log/</code></td>
+        <td>Ficheros de Log de la aplicación.</td>
+      </tr>
+      <tr>
+        <td><code>public/</code></td>
+        <td>La única carpeta vista por el mundo tal como es. Contiene los ficheros estáticos y assets compilados.</td>
+      </tr>
+      <tr>
+        <td><code>Rakefile</code></td>
+        <td>Este fichero localiza y carga tareas que pueden ser ejecutadas desde la línea de comandos. La lista de tareas son definidas a través de los componentes de Rails.</td>
+      </tr>
+      <tr>
+        <td><code>README.rdoc</code></td>
+        <td>Este es un breve manual de instrucciones para la aplicación: qué hace, cómo configurarla, etc.</td>
+      </tr>
+      <tr>
+        <td><code>test/</code></td>
+        <td>Pruebas unitarias, fixtures y otras.</td>
+      </tr>
+      <tr>
+        <td><code>tmp/</code></td>
+        <td>Ficheros temporales (como ficheros de caché, PID y ficheros de sesiones).</td>
+      </tr>
+      <tr>
+        <td><code>vendor/</code></td>
+        <td>Lugar para código de terceros como librerías y plugins.</td>
+      </tr>
+      </tbody>
+      </table>
+    </section>
+
+    <section class="slide">
       <h2>Arrancamos el servidor en local</h2>
       <ol>
         <li>
@@ -256,16 +340,50 @@
 
     <section class="slide">
       <h2>Comandos de Rails</h2>
-      <ul>
-        <li>rails new app_name</li>
-        <li>rails server</li>
-        <li>rails console</li>
-        <li>rails generate</li>
-        <li>rails dbconsole</li>
-        <li>rails destroy</li>
-        <li>rails runner</li>
-        <li>rake</li>
-      </ul>
+      <table>
+      <thead>
+      <tr>
+        <th>Comando</th>
+        <th>Propósito</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><code>rails new app_name</code></td>
+        <td>Crear una nueva aplicación Rails.</td>
+      </tr>
+      <tr>
+        <td><code>rails server</code></td>
+        <td>Arrancar el servidor.</td>
+      </tr>
+      <tr>
+        <td><code>rails console</code></td>
+        <td>Abre una consola para poder interactuar con Rails desde línes de comandos. Muy útil para probar pequeños trozos de código.</td>
+      </tr>
+      <tr>
+        <td><code>rails generate</code></td>
+        <td>Genera por nosotros un montón de ficheros y código según el tipo de generador usado. Ej. <code>rails generate model</code> o <code>rails generate scaffold</code></td>
+      </tr>
+      <tr>
+        <td><code>rails dbconsole</code></td>
+        <td>Abre una interfaz con la que interactuar directamente con la base de datos.</td>
+      </tr>
+      <tr>
+        <td><code>rails destroy</code></td>
+        <td>Lo opuesto a «generate». Deshace lo que el «generate» había hecho.</td>
+      </tr>
+      <tr>
+        <td><code>rails runner</code></td>
+        <td>Permite ejecutar código Rails de manera no interactiva.</td>
+      </tr>
+      <tr>
+        <td><code>rake</code></td>
+        <td>Permite ejecutar tareas. Con <code>rake --tasks</code> se puede ver una lista de ellas.</td>
+      </tr>
+      </tbody>
+      </table>
+      <br/>
+      <p style="font-size: 0.6em">Podemos ejecutarlos con -h o --help para obtener más información</p>
     </section>
 
     <section class="slide">
