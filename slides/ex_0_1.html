@@ -53,6 +53,28 @@
     </section>
 
     <section class="slide">
+      <h2>Front-end y Back-end</h2>
+      <img style="float: right" src="images/ex_0_1/frontend.jpg"/>
+      <ul>
+        <li><h3>Front-end</h3>
+          <p>Parte de la web que podemos ver y con la que se puede interactuar.</p>
+        </li>
+        <li><h3>Backend-end</h3>
+          <ul>
+            <li><h4>Lógica</h4>
+              <p>Parte encargada de procesar la información y almacenarla.</p>
+            </li>
+            <li><h4>Base de datos</h4>
+              <p>"Almacén" de información</p>
+            </li>
+            <li><h4>Infraestructura</h4>
+              <p>Servidor web.</p>
+            </li>
+        </ul>
+      </ul>
+    </section>
+
+    <section class="slide">
       <h2>Bentobox</h2>
       <img src="images/ex_0_1/bentobox.png"/>
     </section>
@@ -103,26 +125,24 @@
     </section>
 
     <section class="slide">
-      <h2>Front-End y Back-End</h2>
+      <h2>Otros lenguajes y tecnologías de Front-end y Back-end</h2>
       <ul>
-        <li><h3>Front-End</h3>
-          <p>Parte de la web que podemos ver y con la que se puede interactuar.</p>
+        <li><h3>Front-end</h3>
           <p>Diseño, HTML, CSS, JavaScript, fuentes, botones, formularios...</p>
         </li>
-        <li><h3>Lógica - Backend-End</h3>
-          <p>Parte encargada de procesar la información y almacenarla.</p>
-          <p>Ruby, RoR, Python, Django, PHP, ...</p>
-        </li>
-        <li><h3>Base de datos - Backend-End</h3>
-          <p>"Almacén" de información</p>
-          <p>PostgreSQl, MySQL, SQLite, ...</p>
-        </li>
-        <li><h3>Infraestructura - Backend-End</h3>
-          <p>Servidor web.</p>
-          <p>Apache, Nginx, IIS, ...</p>
-        </li>
+        <li><h3>Backend-end</h3>
+          <ul>
+            <li><h4>Lógica</h4>
+              <p>Ruby, RoR, Python, Django, PHP, ...</p>
+            </li>
+            <li><h4>Base de datos</h4>
+              <p>PostgreSQL, MySQL, SQLite, ...</p>
+            </li>
+            <li><h4>Infraestructura</h4>
+              <p>Apache, Nginx, IIS, ...</p>
+            </li>
+        </ul>
       </ul>
-      <!-- Ejemplo venta de entradas. Imagen que lo represente. <img style="float: right" src="images/first_web_server.jpg"/>-->
     </section>
 
     <section class="slide">
@@ -131,18 +151,28 @@
       
     <section class="slide">
       <h2>¿Qué necesitamos para empezar?</h2>
-      <img style="float: right" src="images/ex_0_1/laptop.png"/>
-      <h3>Ordenador</h3>
-      <p>Con el entorno ya instalado, en este caso, la máquina virtual.</p>
-      <img style="float: right" src="images/ex_0_1/sublimetext.jpg"/>
-      <h3>Editor de Texto</h3>
-      <p>Sublime Text, Vim, Emacs y Gedit son ejemplos de editores de texto que se pueden usar para escribir código y editar ficheros.</p>
-      <img style="float: right" src="images/ex_0_1/terminal_suse.png"/>
-      <h3>Terminal</h3>
-      <p>Donde se inicia el servidor de Rails y se ejecutan los comandos.</p>
-      <img style="float: right" src="images/ex_0_1/browser.jpg"/>
-      <h3>Navegador web</h3>
-      <p>(Firefox, Safari, Chrome) para vizualizar la aplicación.</p>
+      <ul>
+        <li>
+          <img style="float: right" src="images/ex_0_1/laptop.png"/>
+          <h3>Ordenador</h3>
+          <p>Con el entorno ya instalado, en este caso, la máquina virtual.</p>
+        </li>
+        <li>
+          <img style="float: right" src="images/ex_0_1/sublimetext.jpg"/>
+          <h3>Editor de Texto</h3>
+          <p>Sublime Text, Vim, Emacs y Gedit son ejemplos de editores de texto que se pueden usar para escribir código y editar ficheros.</p>
+        </li>
+        <li>
+          <img style="float: right" src="images/ex_0_1/terminal_suse.png"/>
+          <h3>Terminal</h3>
+          <p>Donde se inicia el servidor de Rails y se ejecutan los comandos.</p>
+        </li>
+        <li>
+          <img style="float: right" src="images/ex_0_1/browser.jpg"/>
+          <h3>Navegador web</h3>
+          <p>(Firefox, Safari, Chrome) para visualizar la aplicación.</p>
+        </li>
+      </ul>
     </section>
 
     <section class="slide">
@@ -184,42 +214,7 @@
     <section class="slide">
       <h2>Estructura de directorios de Rails</h2>
       <p>Esto es lo que ocurre:</p>
-      <pre style="font-size: 10pt; color: #090">
-        create  README.rdoc
-        create  Rakefile
-        create  config.ru
-        create  .gitignore
-        create  Gemfile
-        create  app
-        create  app/assets/javascripts/application.js
-        create  app/assets/stylesheets/application.css
-        create  app/controllers/application_controller.rb
-        create  app/helpers/application_helper.rb
-        create  app/views/layouts/application.html.erb
-              ...
-        create  config
-        create  config/routes.rb
-        create  config/application.rb
-        create  config/environment.rb
-              ...
-        create  config/initializers
-              ...
-        create  config/locales
-              ...
-        create  config/database.yml
-        create  db
-        create  db/seeds.rb
-        create  lib
-              ...
-        create  log
-              ...
-        create  public
-              ...
-        create  test/fixtures
-              ...
-        create  vendor/assets/javascripts
-              ...
-      </pre>
+      <img src="images/ex_0_1/rails_new.png"/>
     </section>
 
     <section class="slide">
@@ -290,6 +285,24 @@
       </tr>
       </tbody>
       </table>
+    </section>
+
+    <section class="slide">
+      <h2>Navega por los directorios y ficheros</h2>
+      <img  style="float: right;" src="images/ex_0_1/sublime_folder.png"/>
+      <ul>
+        <li>En el terminal:
+          <ul>
+            <li><code>$ ls</code></li>
+            <li><code>$ cd</code></li>
+          </ul>
+        </li>
+        <li>En Sublime Text:
+          <ul>
+            <li>Abrir directorio <code>~/projects/railsgirls</code></li>
+          </ul>
+        </li>
+      </ul>
     </section>
 
     <section class="slide">
@@ -387,6 +400,43 @@
     </section>
 
     <section class="slide">
+      <h2>Control de versiones</h2>
+      <ul>
+        <li>Crear un repositorio de git
+          <ul>
+            <img style="float: right;" src="images/ex_0_1/git.png"/>
+            <li><code>git init</code></li>
+          </ul>
+        </li>
+        <li>
+          <p>El repositorio local está consta de 3 "partes" administradas por Git:</p>
+          <ul>
+            <img style="float: right;" src="images/ex_0_1/git_parts.png"/>
+            <li>Directorio de trabajo</li>
+            <li>Index</li>
+            <li>HEAD</li>
+          </ul>
+        </li>
+        <li>Registrar cambios (añadirlos al Index)
+          <ul>
+            <li><code>git «filename»</code></li>
+            <li><code>git add .</code></li>
+          </ul>
+        </li>
+        <li>Hacer el commit (pasan al HEAD)
+          <ul>
+            <li><code>git commit -m "Mensaje del commit"</code></li>
+          </ul>
+        </li>
+        <li>Enviar los cambios (commits) al repositorio remoto
+          <ul>
+            <li><code><strike>git push origin master</strike></code> ¡ahora no!</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide">
       <h1>Pasamos a la magia...</h1>
     </section>
 
@@ -396,6 +446,7 @@
       http://simonwebdesign.com/wp-content/uploads/edd/firefox-browser-mockup-hero.jpg
       http://www.balinov.com/static/assets/blog/2/1.jpg
       http://i.stack.imgur.com/2DFKk.png
+      https://iactivedesign.files.wordpress.com/2012/03/website_interface_design_mumbai_leveljam.jpg
     </section-->
 
 
